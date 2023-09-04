@@ -1,0 +1,50 @@
+create_user
+CREATE DEFINER=`root`@`%` PROCEDURE `create_user`(IN `opid` VARCHAR(64), IN `tablename` VARCHAR(64))
+BEGIN
+-- 	DECLARE tableName VARCHAR(64);
+-- 	set tableName = tablename;
+	
+	insert into users(openid,username,service_date) values(opid,'微信用户',CURDATE());
+	
+  set @create_table_sql = CONCAT('create table if not exists ', tablename, '(
+			`class` VARCHAR(64),
+			`monday` VARCHAR(64),
+			`tuesday` VARCHAR(64),
+			`wednesday` VARCHAR(64),
+			`thursday` VARCHAR(64),
+			`friday` VARCHAR(64),
+			`saturday` VARCHAR(64),
+			`sunday` VARCHAR(64)
+		);'
+	);
+  prepare stmt from @create_table_sql;
+  execute stmt;
+  deallocate prepare stmt;
+
+
+END
+
+
+register_day
+CREATE DEFINER=`root`@`%` PROCEDURE `register_day`(IN opid VARCHAR(64))
+BEGIN
+	DECLARE thisopid VARCHAR(64);
+	SET thisopid = opid;
+	select datediff(CURDATE(),users.service_date) as register_days from users where users.openid=thisopid;
+	
+END
+
+
+schedule_search
+CREATE DEFINER=`root`@`%` PROCEDURE `schedule_search`(IN `opid` varchar(64))
+BEGIN
+	#Routine body goes here...
+	DECLARE col VARCHAR(64);
+	set col=date_format(curdate(),'%W');
+
+	set @statements = concat('select ' ,col,' from ',opid);
+	prepare stmt from @statements;
+	execute stmt;
+  deallocate prepare stmt;
+
+END

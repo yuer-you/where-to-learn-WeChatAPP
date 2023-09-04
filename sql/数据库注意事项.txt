@@ -1,0 +1,2 @@
+users和classroom_collect为user库内的表，建议将这两个表保存在一个文件夹内（使用navicat的话）
+sql函数.txt内有三个函数，均为user库内的函数

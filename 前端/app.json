@@ -1,0 +1,50 @@
+{
+    "pages": [
+        "pages/splash/splash",
+        "pages/index/index",
+        "pages/classroom/classroom",
+        "pages/schedule/schedule",
+        "pages/user/user",
+        
+        "pages/user/collect/collect",
+        "pages/schedule/edit/edit",
+        "pages/user/edituser/edituser",
+        "pages/user/about/about"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#eee",
+        "navigationBarTitleText": "去哪学",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "images/tabs/index.png",
+                "selectedIconPath": "images/tabs/index-active.png"
+            },
+            {
+                "pagePath": "pages/classroom/classroom",
+                "text": "教室",
+                "iconPath": "images/tabs/classroom.png",
+                "selectedIconPath": "images/tabs/classroom-active.png"
+            },
+            {
+                "pagePath": "pages/schedule/schedule",
+                "text": "课程表",
+                "iconPath": "images/tabs/schedule.png",
+                "selectedIconPath": "images/tabs/schedule-active.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "我的",
+                "iconPath": "images/tabs/user.png",
+                "selectedIconPath": "images/tabs/user-active.png"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

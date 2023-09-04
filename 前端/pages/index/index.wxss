@@ -1,0 +1,168 @@
+/* pages/index/index.wxss */
+/* 分块背景 */
+.index_block {
+    background-color: #EBEBEB;
+    margin: 30rpx 34rpx 0 34rpx;
+    padding: 35rpx 40rpx;
+    border-radius: 40rpx;
+}
+.index_title {
+    padding-bottom: 30rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.index_title .T1 {
+    font-size: 36rpx;
+    font-weight: 700;
+}
+.index_title .T2 {
+    margin-left: 30rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+}
+.index_block scroll-view {
+    height: 145rpx;
+    margin-right: 20rpx;
+    display: flex;
+    justify-content: flex-start;
+    overflow:hidden;
+}
+.index_block .schedule {
+    margin: 0 25rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.index_block .schedule:first-child {
+    margin-left: 0;
+}
+.index_block .schedule .scheduleText {
+    margin-bottom: 12rpx;
+    white-space:nowrap;
+    font-size: 26rpx;
+    font-weight: 400;
+}
+.index_block .schedule .classFlex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.index_block .classFlex .className {
+    margin-bottom: 5rpx;
+    white-space:nowrap;
+    font-size: 30rpx;
+    font-weight: 400;
+}
+.index_block .classFlex .classInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.index_block .classFlex .classInfo text {
+    white-space:nowrap;
+    margin-right: 15rpx;
+    font-size: 24rpx;
+    font-weight: 300;
+}
+.index_block .classFlex .classInfo text:last-child {
+    margin: 0;
+}
+/* 块内内容 */
+.index_word text {
+    display: block;
+    text-align: center;
+}
+
+/* 空 view 空行 */
+.index_empty {
+    height: 20rpx;
+}
+
+/* 表单 */
+.table {
+    display: flex;
+    flex-direction: column;     /* 排列形式: 向下 */
+    margin-bottom: 20rpx;
+    padding: 0 20rpx;
+}
+.tr {
+    display: flex;
+    flex-direction: row;
+}
+.th, .td {  /* 公有的属性 */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;            /* 自动换行 */
+    width: 33.3%;				/* 4个25%相加刚好100% */
+    text-align: center;         /* 文本居中 */
+    justify-content:center;     /* 主轴居中 */
+    align-items: center;        /* 交叉轴居中 */
+    border-top: 1rpx solid #C7C7C7;      /* 单元格上线框 */
+    border-bottom: 1rpx solid #C7C7C7;   /* 单元格下线框 */
+    border-left: 1rpx solid #C7C7C7;     /* 单元格左线框 */
+    border-right: 1rpx solid #C7C7C7;    /* 单元格右线框 */
+}
+.th {
+    padding: 30rpx 0;
+}
+.td {
+    padding: 20rpx 0;
+}
+
+.index_block .classroomScroll {
+    height: 330rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.classroomScroll .bigBlock{
+    margin-right: 35rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.bigBlock .dayTime {
+    margin-bottom: 20rpx;
+    white-space:nowrap;
+}
+.bigBlock .classrooomState {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.classrooomState .classroomName {
+    margin-top: 5rpx;
+    height: 70rpx;
+    white-space:nowrap;
+    margin-bottom: 20rpx;
+}
+.classrooomState .empty {
+    margin-bottom: 20rpx;
+    width: 115rpx;
+    height: 70rpx;
+    border-radius: 100rpx;
+    background-color: #75FF78;
+}
+.classrooomState .occupy {
+    margin-bottom: 20rpx;
+    width: 115rpx;
+    height: 70rpx;
+    border-radius: 100rpx;
+    background-color: #FF7878;
+}
+
+.classrooomState .unknow {
+    margin-bottom: 20rpx;
+    width: 115rpx;
+    height: 70rpx;
+    border-radius: 100rpx;
+    background-color: #c0c0c0;
+}

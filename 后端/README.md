@@ -1,0 +1,17 @@
+changeClassroom：修改收藏教室  
+changeSchedule：修改课表  
+deleteData：删除全部数据  
+downLoadPhoto：获取用户上传的头像  
+gsc：获取教室状态
+getClassroomCollect：获取收藏教室的状态  
+getClassroomRanking：获取教室排行  
+getClassroomStateAPI：获取教室状态的功能代码  
+getSchedule：获取课表  
+getScheduleToday：获取今日课表  
+imageCutAPI：将课表规范化处理的功能代码  
+normalizeOpenidAPI：将openid规范化处理的功能代码  
+ocr：图片识别  
+openid：获取openid并将一系列参数传递到前端  
+saveUsername：获取用户修改的昵称并保存  
+time_ocr&bool_schedule：获取剩余图片识别次数、bool_schedule改为1  
+time_ocr_to3：定时触发（需手动设置），将time_ocr设置为3（每天3次机会）

@@ -1,0 +1,79 @@
+<!--pages/classroom/classroom.wxml-->
+<view class="all">
+    <!-- head,表单 -->
+    <view class='head'>
+        <form catchsubmit="formSubmit">
+            <!-- 表单提交 -->
+            <view class="Form">
+                <!-- 时间选择器 -->
+                <view class="Picker">
+                    <picker mode="date" value="{{currentDate}}" bindchange="bindDateChange">
+                        <view>{{currentDate}}</view>
+                    </picker>
+                </view>
+
+                <!-- 教学楼选择器 -->
+                <view class="Picker">
+                    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                        <view>{{array[index]}}</view>
+                    </picker>
+                </view>
+
+                <!-- 提交按钮 -->
+                <view class="Picker" style='width: 80rpx; padding: 15rpx 15rpx;'>
+                    <button style='height: 40rpx; width: auto; font-size: 32rpx; font-weight: 400; padding: 0; margin: 0; background-color: #fff;' formType="submit">查询</button>
+                </view>
+            </view>
+        </form>
+    </view>
+
+    <!-- body,教室详情 -->
+    <view class="body">
+        <!-- 左侧基础信息（可以修改为循环） -->
+        <view class="left">
+            <view class="time" style="margin-top: 60rpx;">
+                <text>1\n上午第一节\n8:00~9:50</text>
+            </view>
+            <view class="time">
+                <text>2\n上午第二节\n10:10~12:00</text>
+            </view>
+            <view class="time">
+                <text>3\n中午\n12:10~14:00</text>
+            </view>
+            <view class="time">
+                <text>4\n下午第一节\n14:10~16:00</text>
+            </view>
+            <view class="time">
+                <text>5\n下午第二节\n16:20~18:10</text>
+            </view>
+            <view class="time">
+                <text>6\n晚上第一节\n19:00~20:50</text>
+            </view>
+            <view class="time">
+                <text>7\n晚上第二节\n21:00~21:50</text>
+            </view>
+        </view>
+
+        <!-- 右侧详细信息 -->
+        <view class="right">
+            <!-- 横向滑动 -->
+            <scroll-view scroll-x="true" enable-passive='true' enable-flex="true" enhanced="true" showScrollbar="{{true}}">
+                <!-- 对应教学楼的教室（列循环） -->
+                <block wx:for="{{classroom[whichIndex]}}" wx:for-item="item" wx:for-index="number">
+                    <view class="classroom">
+                        <!-- 教室名 -->
+                        <text>{{item}}</text>
+                        <!-- 教室状态 -->
+                        <view class="stateFlex">
+                            <!-- 每个时间段对应的教室状态（行循环） -->
+                            <block wx:for="{{state[number]}}" wx:for-item="Cstate">
+                                <!-- 若无数据，则显示为灰色 -->
+                                <view class='{{Cstate == 0 ? "empty" : Cstate == 1 ? "occupy" : "unknow"}}'/>
+                            </block>
+                        </view>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+</view>

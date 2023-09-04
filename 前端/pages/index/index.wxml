@@ -1,0 +1,133 @@
+<!--pages/index/index.wxml-->
+<scroll-view scroll-y="true" enable-passive='true' enhanced="true" showScrollbar="{{true}}">
+    <!-- 收藏教室 -->
+    <view class='index_block'>
+        <!-- 如果用户收藏了教室，则显示教室状态 -->
+        <block wx:if="{{bool_classroom}}">
+            <view class='index_title'>
+                <text class="T1">收藏教室</text>
+                <!-- 今天是周几 -->
+                <text class="T2">{{name_today}}</text>
+            </view>
+            <!-- 横向滑动 -->
+            <scroll-view class="classroomScroll" scroll-x='true' enable-passive='true' enable-flex="true" enhanced="true" showScrollbar="{{true}}">
+                <!-- 列循环 -->
+                <block wx:for="{{dayTime}}" wx:for-index="dayTimeNumber" wx:for-item="dayTimeItem">
+                    <view class="bigBlock">
+                        <!-- (0,n)：上课时间 -->
+                        <block wx:if="{{dayTimeItem == null}}">
+                            <!-- (0,0)：为空 -->
+                            <text class="dayTime">\n</text>
+                        </block>
+                        <block wx:else>
+                            <!-- 其余为时间 -->
+                            <text class="dayTime">{{dayTimeItem}}</text>
+                        </block>
+                        <!-- 第2~4行教室状态 -->
+                        <view class="classrooomState">
+                            <!-- (n,0)：教室名称（n =! 0） -->
+                            <block wx:if="{{dayTimeItem == null}}" wx:for="{{classroomName}}" wx:for-index="classroomNameNumber">
+                                <text class="classroomName">{{classroomName[classroomNameNumber]}}</text>
+                            </block>
+                            <block>
+                                <!-- 若有教室状态 -->
+                                <block wx:if="{{classroomState}}">
+                                    <block wx:if="{{dayTimeItem}}" wx:for="{{classroomState}}" wx:for-item="cState">
+                                        <view class='{{cState[dayTimeNumber] == 0 ? "empty" : "occupy"}}'></view>
+                                    </block>
+                                </block>
+                                <!-- 若无教室状态信息 -->
+                                <block wx:else>
+                                    <block wx:if="{{dayTimeItem}}" wx:for="{{[0, 1, 2]}}">
+                                        <view class='unknow'></view>
+                                    </block>
+                                </block>
+                            </block>
+                        </view>
+                    </view>
+                </block>
+            </scroll-view>
+        </block>
+        <!-- 若用户没有收藏教室，则提醒用户收藏 -->
+        <block wx:else>
+            <view class='index_title'>
+                <text class="T1">收藏教室</text>
+            </view>
+            <view class='index_word'>
+                <text style="font-size: 36rpx;">还没有添加收藏教室哦~</text>
+                <text style="font-size: 30rpx; padding-bottom: 60rpx">在“我的”页面收藏</text>
+            </view>
+        </block>
+        
+    </view>
+
+    <!-- 空行。可以使用margin代替（因为懒得使用子节点） -->
+    <view class='index_empty'></view>
+
+    <!-- 今日课表 -->
+    <view class='index_block'>
+        <!-- 若用户添加了课表 -->
+        <block wx:if="{{bool_schedule}}">
+            <view class='index_title'>
+                <text class="T1">今日课表</text>
+                <!-- 今天星期几 -->
+                <text class="T2">{{name_today}}</text>
+            </view>
+            <!-- 横向滑动 -->
+            <scroll-view scroll-x='true' enable-passive='true' enable-flex="true" enhanced="true" showScrollbar="{{true}}">
+                <!-- 列循环 -->
+                <block wx:for="{{classdate}}" wx:for-index="number">
+                    <view class="schedule">
+                        <!-- 上课时间 -->
+                        <text class="scheduleText">{{classdate[number]}}</text>
+                        <!-- 如果有今天课 -->
+                        <block wx:if="{{schedule_today[number]}}">
+                            <view class="classFlex">
+                                <!-- 课程名称 -->
+                                <text class="className">{{schedule_today[number][0]}}</text>
+                                <!-- 课程详细信息（无教师姓名） -->
+                                <view class="classInfo">
+                                    <text>{{schedule_today[number][1]}}</text>
+                                    <text>{{schedule_today[number][3]}}</text>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </block>
+            </scroll-view>
+        </block>
+        <!-- 若课表没有导入，则提示用户导入 -->
+        <block wx:else>
+            <view class='index_title'>
+                <text class="T1">今日课表</text>
+            </view>
+            <view class='index_word'>
+                <text style="font-size: 36rpx;">还没有上传课表哦~</text>
+                <text style="font-size: 30rpx; padding-bottom: 60rpx">在“课表”页面上传</text>
+            </view>
+        </block>
+    </view>
+    <view class='index_empty'></view>
+
+    <!-- 大家都爱去 -->
+    <view class='index_block'>
+        <view class='index_title'>
+            <text class="T1">大家都爱去</text>
+        </view>
+        <view class="table">
+            <!-- 表头(即第一行) -->
+            <view class="tr">
+                <view class="th">排名</view>
+                <view class="th">教室</view>
+                <view class="th">收藏人数</view>
+            </view>
+            <!-- 表格第二行 -->
+            <view class="tr" wx:for="{{classroomRanking}}" wx:for-index="ranking" wx:for-item="cRItem">
+                <view class="td">{{ranking + 1}}</view>
+                <view class="td">{{cRItem[0]}}</view>
+                <view class="td">{{cRItem[1]}}</view>
+            </view>
+        </view>
+    </view>
+    <view class='index_empty'></view>
+</scroll-view>
