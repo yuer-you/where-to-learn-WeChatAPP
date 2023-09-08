@@ -1,0 +1,24 @@
+/* pages/schedule/schedule.wxss */
+.all {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+}
+
+.head .button {
+    margin: 10rpx 0;
+    padding: 20rpx 0;
+    font-size: 32rpx;
+    font-weight: 700;
+}
+
+.head  .inactive {
+    color: rgb(175, 175, 175);
+}

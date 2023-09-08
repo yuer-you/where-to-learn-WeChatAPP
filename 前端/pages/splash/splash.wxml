@@ -1,0 +1,16 @@
+<!--splash/splash.wxml-->
+<!-- 启动页 -->
+<view class="all">
+    <image class="photo" src="../../images/icon.png" mode="aspectFit"></image>
+    <text class="text">让信息获取更简单！</text>
+    <view class="box">
+        <view class="loading13">
+            <view></view>
+            <view></view>
+            <view></view>
+            <view></view>
+            <view></view>
+        </view>
+    </view>
+</view>
+

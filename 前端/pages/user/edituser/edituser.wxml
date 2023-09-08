@@ -1,0 +1,13 @@
+<!--pages/edituser/edituser.wxml-->
+<!-- 修改头像 -->
+<button class="userPhoto" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+    <image src="{{userphotopath}}"></image>
+</button>
+<form catchsubmit="formSubmit">
+    <!-- 修改昵称 -->
+    <view class="userName">
+        <label>昵称：</label>
+        <input type="nickname" name="nickname" value="{{username}}"	maxlength='12'/>
+    </view>
+    <button type="primary" form-type="submit">提交</button>
+</form>

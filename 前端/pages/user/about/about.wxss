@@ -1,0 +1,23 @@
+/* pages/about/about.wxss */
+.all {
+    margin: 50rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+.T {
+    font-size: 34rpx;
+    line-height: 60rpx;
+}
+
+.copy {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.photo {
+    width: 30rpx;
+    height: 30rpx;
+}

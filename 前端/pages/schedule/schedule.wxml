@@ -1,0 +1,33 @@
+<!--pages/schedule/schedule.wxml-->
+<view class="all">
+    <!-- head，头部 -->
+    <view class="head">
+        <view class='button' data-current="0" bindtap='switchTab'>
+            <text class='{{currentTab == 0 ? "" : "inactive"}}'>我的课表</text>
+        </view>
+        <view class='button' data-current="1" bindtap='switchTab'>
+            <text class='{{currentTab == 1 ? "" : "inactive"}}'>上传课表</text>
+        </view>
+        <view class='button' data-current="2" bindtap='switchTab'>
+            <text class='{{currentTab == 2 ? "" : "inactive"}}'>修改课表</text>
+        </view>
+    </view>
+
+    <!-- body，选择显示的页面 -->
+    <view class="body">
+        <view wx:if="{{currentTab == 0}}">
+            <!-- 我的课表 -->
+            <mine />
+        </view>
+        <view wx:if="{{currentTab == 1}}">
+            <!-- 上传课表 -->
+            <upload />
+        </view>
+        <view wx:if="{{currentTab == 2}}">
+            <!-- 修改课表 -->
+            <edit />
+        </view>
+    </view>
+
+
+</view>

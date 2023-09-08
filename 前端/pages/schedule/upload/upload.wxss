@@ -1,0 +1,69 @@
+/* pages/schedule/upload/upload.wxss */
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20rpx;
+    position: absolute;
+    width: 100vw;
+    top: 122rpx;
+    left: 0;
+    bottom: 0;
+
+    box-sizing: border-box;
+}
+
+.warning {
+    margin: 10rpx 0 30rpx 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:center;
+}
+
+.warning text {
+    margin-left: 20rpx;
+}
+
+.photo {
+    margin: 0 24rpx;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #555;
+    border-radius: 30rpx;
+}
+
+.photo image {
+    z-index: -1;
+    position: relative;
+}
+
+.photo text {
+    z-index: 1;
+    position: absolute;
+    left: 35%;
+    top: 32%;
+}
+
+.buttonClass {
+    flex: 1;
+    margin: 30rpx 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.buttonClass .button1 {
+    background-color: #FC6060;
+    color: ivory;
+}
+
+.buttonClass .hoverButton1 {
+    background-color: #DE5454;
+    color: ivory;
+}
+
+.buttonClass button {
+    margin: 20rpx 0;
+}

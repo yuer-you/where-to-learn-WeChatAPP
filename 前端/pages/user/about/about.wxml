@@ -1,0 +1,17 @@
+<!--pages/about/about.wxml-->
+<view class="all">
+    <text class="T" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本小程序由BJTU计算机学院的同学设计与开发，为BJTU主（东）校区的全体同学提供教室与课表查询服务，后续也会更新其他功能（已有想法）。\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎包括但不限于BJTU的同学对小程序进行改进。我们也保证该小程序不会有强制性广告植入。\n\n</text>
+    <text class="T">项目开源地址（已发布）：\n</text>
+    <view class="copy">
+        <text class="T" decode="true">&nbsp;&nbsp;&nbsp;https://github.com/yuer-you&nbsp;&nbsp;&nbsp;</text>
+        <image class="photo" src="../../../images/user/copy.png" mode="aspectFit" bind:tap="bindCopyGithub"></image>
+    </view>
+        <text class="T">\n问题反馈邮箱（请附上手机型号）：\n</text>
+    <view class="copy">
+        <text class="T" decode="true">&nbsp;&nbsp;&nbsp;970750948@qq.com&nbsp;&nbsp;&nbsp;</text>
+        <image class="photo" src="../../../images/user/copy.png" mode="aspectFit" bind:tap="bindCopyQQ"></image>
+    </view>
+    
+
+    
+</view>

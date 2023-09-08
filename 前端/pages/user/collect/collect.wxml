@@ -1,0 +1,52 @@
+<!--pages/collect/collect.wxml-->
+<view class="all">
+    <form catchsubmit="formSubmit">
+        <view class="inputGroup">
+            <!-- 收藏教室1 -->
+            <view class="pickerGroup">
+                <label>收藏教室1</label>
+                <view class="picker">
+                    <picker mode="multiSelector" bindchange="bindMultiPickerChange1" bindcolumnchange="bindMultiPickerColumnChange1" value="{{multiIndex1}}" range="{{multiArray1}}">
+                        <view>{{multiArray1[1][multiIndex1[1]]}}</view>
+                    </picker>
+                    <image class="photo" src="../../../images/user/delete.png" mode="aspectFit" bind:tap="delete1"></image>
+                </view>
+            </view>
+            <view class="oldGroup">
+                <label>原收藏1：</label>
+                <view>{{old_classroom[0]}}</view>
+            </view>
+
+            <!-- 收藏教室2 -->
+            <view class="pickerGroup">
+                <label>收藏教室2</label>
+                <view class="picker">
+                    <picker mode="multiSelector" bindchange="bindMultiPickerChange2" bindcolumnchange="bindMultiPickerColumnChange2" value="{{multiIndex2}}" range="{{multiArray2}}">
+                        <view>{{multiArray2[1][multiIndex2[1]]}}</view>
+                    </picker>
+                    <image class="photo" src="../../../images/user/delete.png" mode="aspectFit" bind:tap="delete2"></image>
+                </view>
+            </view>
+            <view class="oldGroup">
+                <label>原收藏2：</label>
+                <view>{{old_classroom[1]}}</view>
+            </view>
+
+            <!-- 收藏教室3 -->
+            <view class="pickerGroup">
+                <label>收藏教室3</label>
+                <view class="picker">
+                    <picker mode="multiSelector" bindchange="bindMultiPickerChange3" bindcolumnchange="bindMultiPickerColumnChange3" value="{{multiIndex3}}" range="{{multiArray3}}">
+                        <view>{{multiArray3[1][multiIndex3[1]]}}</view>
+                    </picker>
+                    <image class="photo" src="../../../images/user/delete.png" mode="aspectFit" bind:tap="delete3"></image>
+                </view>
+            </view>
+            <view class="oldGroup">
+                <label>原收藏3：</label>
+                <view>{{old_classroom[2]}}</view>
+            </view>
+        </view>
+        <button formType="submit" type="primary">修改</button>
+    </form>
+</view>

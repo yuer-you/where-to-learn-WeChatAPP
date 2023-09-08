@@ -1,0 +1,57 @@
+<!--pages/user/user.wxml-->
+<view class="all">
+    <!-- 头像、昵称、注册时长 -->
+    <view class="user">
+        <!-- 头像 -->
+        <view class="userLeft">
+            <view class="userPhoto">
+                <image class="photo" src="{{userphotopath}}" mode="aspectFit"></image>
+            </view>
+        </view>
+        <view class="userRight">
+            <!-- 用户昵称 -->
+            <view class="userName">
+                <text>{{username}}</text>
+            </view>
+            <!-- 使用时长 -->
+            <view class="userTime">
+                <text>您已使用去哪学小程序\t{{day}}\t天</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="body">
+        <view class="setGroup">
+            <!-- 收藏教室 -->
+            <viwe class="set" bind:tap="collectClassroom">
+                <image class="left" mode="aspectFit" src="../../images/user/always.png"></image>
+                <text>收藏教室</text>
+                <image class="right" mode="aspectFit" src="../../images/user/goto.png"></image>
+            </viwe>
+            <!-- 修改课表 -->
+            <view class="set" bind:tap="editSchedule">
+                <image class="left" mode="aspectFit" src="../../images/user/edit.png"></image>
+                <text>修改课表</text>
+                <image class="right" mode="aspectFit" src="../../images/user/goto.png"></image>
+            </view>
+            <!-- 修改用户头像和昵称 -->
+            <view class="set" bind:tap="editUser">
+                <image class="left" mode="aspectFit" src="../../images/user/user.png"></image>
+                <text>修改头像和昵称</text>
+                <image class="right" mode="aspectFit" src="../../images/user/goto.png"></image>
+            </view>
+            <!-- 清除个人数据 -->
+            <view class="set" bind:tap="deleteData">
+                <image class="left" mode="aspectFit" src="../../images/user/clean.png"></image>
+                <text>清除个人数据</text>
+                <image class="right" mode="aspectFit" src="../../images/user/goto.png"></image>
+            </view>
+            <!-- 关于小程序&问题反馈 -->
+            <view class="set" bind:tap="about">
+                <image class="left" mode="aspectFit" src="../../images/user/about.png"></image>
+                <text>关于小程序&问题反馈</text>
+                <image class="right" mode="aspectFit" src="../../images/user/goto.png"></image>
+            </view>
+        </view>
+    </view>
+</view>

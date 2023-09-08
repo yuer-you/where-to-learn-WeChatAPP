@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+      "mine": "./mine/mine",
+      "upload": "./upload/upload",
+      "edit": "./edit/edit"
+  }
+}

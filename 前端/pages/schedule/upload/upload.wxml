@@ -1,0 +1,16 @@
+<!--pages/schedule/upload/upload.wxml-->
+<view class="body">
+    <view class="warning">
+        <icon type="warn"></icon>
+        <text>您必须先阅读图片要求才能上传图片</text>
+    </view>
+    <view class="photo">
+        <image src="{{photoPath}}" mode="aspectFit"></image>
+        <text hidden="{{imageLoad}}">请选择图片上传</text>
+    </view>
+    <view class="buttonClass">
+        <button class="button1" hover-class="hoverButton1" bind:tap="photoRequest">图片要求</button>
+        <button type="primary" hidden="{{readRequest}}" bind:tap="photoUpload">选择图片上传</button>
+        <button type="primary" hidden="{{serverLoad}}" bind:tap="photoOCR">开始识别</button>
+    </view>
+</view>

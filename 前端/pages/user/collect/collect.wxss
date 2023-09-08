@@ -1,0 +1,55 @@
+/* pages/collect/collect.wxss */
+.all {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.inputGroup {
+    margin: 30rpx 24rpx 50rpx 24rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.inputGroup .pickerGroup {
+    margin: 40rpx 20rpx 15rpx 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.pickerGroup label {
+    font-size: 32rpx;
+}
+.pickerGroup .picker {
+    width: 350rpx;
+    height: 50rpx;
+    margin-left: 30rpx;
+    padding: 10rpx 15rpx 10rpx 25rpx;
+    border-radius: 14rpx;
+    border: 1px solid #555;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.picker .photo {
+    width: 35rpx;
+    height: 35rpx;
+}
+
+.oldGroup {
+    margin: 0 20rpx 40rpx 20rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.oldGroup label {
+    font-size: 24rpx;
+}
+.oldGroup view {
+    font-size: 24rpx;
+}
