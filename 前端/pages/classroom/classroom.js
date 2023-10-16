@@ -78,7 +78,7 @@ Page({
             title: '查询中...',
         })
         wx.request({
-            url: 'https://你的服务器网址/gcs.py?building=' + building + '&data=' + data,
+            url: 'https://smallapp.easternlake.site/wx/gcs.py?building=' + building + '&data=' + data,
             method: 'GET',
             success: (res) => {
                 this.setData({state: null})
