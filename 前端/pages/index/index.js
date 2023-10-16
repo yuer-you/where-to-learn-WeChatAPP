@@ -6,6 +6,8 @@ Page({
      * 页面的初始数据
      */
     data: {
+        announcementText: '',
+
         // 收藏教室
         openid: null,
         bool_classroom: null,
@@ -27,39 +29,42 @@ Page({
         // 大家都爱去
         IndexList: [1,2,3,4,5,6,7,8,9,10],
         classroomRanking: null,
+
+        // 头部通知
+        //滚动速度
+        step: 2,
+        //初始滚动距离
+        distance: 0,
+        space: 300,
+        // 时间间隔
+        interval: 30,
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setData({
-            openid: app.globalData.openid,
-            bool_classroom: app.globalData.bool_classroom,
-            bool_schedule: app.globalData.bool_schedule,
-            table: app.globalData.table,
-            if_change_schedule: app.globalData.if_change_schedule,
-            classroomName: [app.globalData.classroom1, app.globalData.classroom2, app.globalData.classroom3],
-            buildingName: [
-                this.changeBuilding(app.globalData.classroom1),
-                this.changeBuilding(app.globalData.classroom2),
-                this.changeBuilding(app.globalData.classroom3)
-            ],
-            classroomNumber: [
-                this.changeClassNumber(app.globalData.classroom1),
-                this.changeClassNumber(app.globalData.classroom2),
-                this.changeClassNumber(app.globalData.classroom3)
-            ],
-        })
-        // 如果课表发生改变，则重新获取（应该，我也忘了）
-        if (this.data.if_change_schedule == 0) {
-            this.getScheduleToday()
-        }
-        // 如果有收藏教室，则获取
-        if (this.data.bool_classroom) {
-            this.getClassroomCollect(this.data.buildingName, this.data.classroomNumber)
-        }
-        this.getClassroomRanking()
+        //判断onLaunch是否执行完毕
+        app.setLaunchCallback(() => {
+            // 在onLaunch()完成后执行这里的代码
+            this.setData({
+                openid: app.globalData.openid,
+                bool_classroom: app.globalData.bool_classroom,
+                bool_schedule: app.globalData.bool_schedule,
+                table: app.globalData.table,
+                if_change_schedule: app.globalData.if_change_schedule,
+                classroomName: app.globalData.classroomName,
+                buildingName: app.globalData.buildingName,
+                classroomNumber: app.globalData.classroomNumber,
+                name_today: app.globalData.name_today,
+                classroomRanking: app.globalData.classroomRanking,
+                classroomState: app.globalData.classroomState,
+                schedule_today: app.globalData.schedule_today,
+            })
+            console.log('onLoad executed after onLaunch completion');
+        });
+        // 头部通知
+        this.getMessage();
     },
 
     // 获取收藏教室的教室状态
@@ -67,7 +72,7 @@ Page({
         const buildingName_json = JSON.stringify(buildingName)
         const classroomNumber_json = JSON.stringify(classroomNumber)
         wx.request({
-            url: 'https://你的服务器网址/getClassroomCollect.py',
+            url: 'https://smallapp.easternlake.site/wx/getClassroomCollect.py',
             data: {
                 buildingName: buildingName_json,
                 classroomNumber: classroomNumber_json
@@ -85,11 +90,10 @@ Page({
             }
         })
     },
-
     // 获取今日课表
     getScheduleToday: function () {
         wx.request({
-            url: 'https://你的服务器网址/getScheduleToday.py?table=' + this.data.table,
+            url: 'https://smallapp.easternlake.site/wx/getScheduleToday.py?table=' + this.data.table,
             method: 'GET',
             success: (res) => {
                 if (res.data.today_schedule) {
@@ -104,11 +108,10 @@ Page({
             }
         })
     },
-
     // 获取教室排名
     getClassroomRanking: function () {
         wx.request({
-            url: 'https://你的服务器网址/getClassroomRanking.py',
+            url: 'https://smallapp.easternlake.site/wx/getClassroomRanking.py',
             method: 'GET',
             success: (res) => {
                 if (res.data.classroomRanking) {
@@ -147,7 +150,6 @@ Page({
                 break
         }
     },
-
     // 获取库名
     changeBuilding: function (classroom) {
         if (classroom != null) {
@@ -163,11 +165,10 @@ Page({
                 letters = classroom.slice(0, 1)
                 if (letters == 'Z') return 'z'
                 else if (letters == '8') return 'eight'
-                else  return False
+                else return false
             }
         } else return null
     },
-
     // 获取classroom列的值
     changeClassNumber: function (classroom) {
         if (classroom != null) {
@@ -180,7 +181,34 @@ Page({
             number = number.map(Number)[0]
             return number
         } else return null
-        
+    },
+
+    adLoad() {
+        console.log('Banner 广告加载成功')
+    },
+    adError(err) {
+        console.log('Banner 广告加载失败', err)
+    },
+    adClose() {
+        console.log('Banner 广告关闭')
+    },
+
+    // 获取通知消息
+    getMessage: function () {
+        wx.request({
+            url: 'https://smallapp.easternlake.site/wx/getMessage.py',
+            method: 'GET',
+                success: (res) => {
+                    if (res.data.text) {
+                        this.setData({
+                            announcementText: res.data.text
+                        })
+                        console.log('通知消息：', res.data.text)
+                    } else {
+                        console.log('获取通知错误')
+                    }
+                },
+        })
     },
 
     /**

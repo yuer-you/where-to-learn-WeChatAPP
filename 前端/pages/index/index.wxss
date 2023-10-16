@@ -1,4 +1,33 @@
 /* pages/index/index.wxss */
+/* 小广播 */
+.wrapX {
+    padding: 20rpx;
+}
+.wrapX .wrapOut {
+    background-color: #ffd7b4;
+    height: 60rpx;
+    overflow: hidden;
+}
+.wrapX .wrapOut .wrapInner {
+    overflow: hidden;
+    margin: 0 20rpx;
+}
+/* 在这里修改轮播时长 */
+.wrapX .wrapOut .wrapInner .contant {
+    line-height: 60rpx;
+    white-space: nowrap;
+    animation: remindMessage 20s linear infinite;
+    width: 100%;
+}
+@keyframes remindMessage {
+    0% {
+    -webkit-transform: translateX(100%);
+    }
+    100% {
+    -webkit-transform: translateX(-300%);
+    }
+}
+
 /* 分块背景 */
 .index_block {
     background-color: #EBEBEB;
@@ -157,12 +186,4 @@
     height: 70rpx;
     border-radius: 100rpx;
     background-color: #FF7878;
-}
-
-.classrooomState .unknow {
-    margin-bottom: 20rpx;
-    width: 115rpx;
-    height: 70rpx;
-    border-radius: 100rpx;
-    background-color: #c0c0c0;
 }

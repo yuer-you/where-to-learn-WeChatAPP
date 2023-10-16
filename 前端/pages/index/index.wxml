@@ -1,7 +1,16 @@
 <!--pages/index/index.wxml-->
+<!-- 顶部通知 -->
+<view class='wrapX'>
+	<view class="wrapOut">
+		<view class="wrapInner">
+			<view class="contant">{{announcementText}}</view>
+		</view>
+	</view>
+</view>
+
 <scroll-view scroll-y="true" enable-passive='true' enhanced="true" showScrollbar="{{true}}">
     <!-- 收藏教室 -->
-    <view class='index_block'>
+    <view class='index_block' style="margin-top: 0;">
         <!-- 如果用户收藏了教室，则显示教室状态 -->
         <block wx:if="{{bool_classroom}}">
             <view class='index_title'>
@@ -14,32 +23,39 @@
                 <!-- 列循环 -->
                 <block wx:for="{{dayTime}}" wx:for-index="dayTimeNumber" wx:for-item="dayTimeItem">
                     <view class="bigBlock">
-                        <!-- (0,n)：上课时间 -->
-                        <block wx:if="{{dayTimeItem == null}}">
-                            <!-- (0,0)：为空 -->
-                            <text class="dayTime">\n</text>
+                        <!-- 第一行 -->
+                        <block>
+                            <!-- (0,n)：上课时间 -->
+                            <block wx:if="{{dayTimeItem == null}}">
+                                <!-- (0,0)：为空 -->
+                                <text class="dayTime">\n</text>
+                            </block>
+                            <block wx:else>
+                                <!-- 其余为时间 -->
+                                <text class="dayTime">{{dayTimeItem}}</text>
+                            </block>
                         </block>
-                        <block wx:else>
-                            <!-- 其余为时间 -->
-                            <text class="dayTime">{{dayTimeItem}}</text>
-                        </block>
-                        <!-- 第2~4行教室状态 -->
+                        
+                        <!-- 第2~4行教室名称及状态 -->
                         <view class="classrooomState">
                             <!-- (n,0)：教室名称（n =! 0） -->
                             <block wx:if="{{dayTimeItem == null}}" wx:for="{{classroomName}}" wx:for-index="classroomNameNumber">
-                                <text class="classroomName">{{classroomName[classroomNameNumber]}}</text>
-                            </block>
-                            <block>
-                                <!-- 若有教室状态 -->
-                                <block wx:if="{{classroomState}}">
-                                    <block wx:if="{{dayTimeItem}}" wx:for="{{classroomState}}" wx:for-item="cState">
-                                        <view class='{{cState[dayTimeNumber] == 0 ? "empty" : "occupy"}}'></view>
-                                    </block>
+                                <!-- 如果有教室名称则显示 -->
+                                <block wx:if="{{classroomName[classroomNameNumber] != null}}">
+                                    <text class="classroomName">{{classroomName[classroomNameNumber]}}</text>
                                 </block>
-                                <!-- 若无教室状态信息 -->
+                                <!-- 如果没有教室名称则为空行 -->
                                 <block wx:else>
-                                    <block wx:if="{{dayTimeItem}}" wx:for="{{[0, 1, 2]}}">
-                                        <view class='unknow'></view>
+                                </block>
+                            </block>
+                            <!-- 教室状态 -->
+                            <block>
+                                <block wx:if="{{dayTimeItem}}" wx:for="{{classroomState}}" wx:for-item="cState" wx:for-index="idx">
+                                    <!-- 判断收藏了几个教室，并进行展示 -->
+                                    <block wx:if="{{classroomState[idx] == null}}">
+                                    </block>
+                                    <block wx:else>
+                                        <view class='{{cState[dayTimeNumber] == 0 ? "empty" : "occupy"}}'></view>
                                     </block>
                                 </block>
                             </block>
@@ -106,6 +122,12 @@
                 <text style="font-size: 30rpx; padding-bottom: 60rpx">在“课表”页面上传</text>
             </view>
         </block>
+    </view>
+    <view class='index_empty'></view>
+
+    <!-- AD -->
+    <view class='index_block'>
+        <ad unit-id="adunit-0359fdaae806d4eb"></ad>
     </view>
     <view class='index_empty'></view>
 
