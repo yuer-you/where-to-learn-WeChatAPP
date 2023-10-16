@@ -42,7 +42,7 @@
     z-index: 1;
     position: absolute;
     left: 35%;
-    top: 32%;
+    top: 31%;
 }
 
 .buttonClass {
