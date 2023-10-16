@@ -1,15 +1,18 @@
 {
     "pages": [
-        "pages/splash/splash",
         "pages/index/index",
         "pages/classroom/classroom",
         "pages/schedule/schedule",
         "pages/user/user",
-        
         "pages/user/collect/collect",
         "pages/schedule/edit/edit",
         "pages/user/edituser/edituser",
-        "pages/user/about/about"
+        "pages/user/about/about",
+        "pages/user/teach/teach",
+        "pages/user/teach/classroomState/classroomState",
+        "pages/user/teach/scheduleAbout/scheduleAbout",
+        "pages/user/teach/collectAbout/collectAbout",
+        "pages/user/teach/userAbout/userAbout"
     ],
     "window": {
         "backgroundTextStyle": "light",
