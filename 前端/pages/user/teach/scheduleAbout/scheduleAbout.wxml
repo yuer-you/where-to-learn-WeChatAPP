@@ -1,0 +1,21 @@
+<!--pages/user/teach/scheduleAbout/scheduleAbout.wxml-->
+<view class="all">
+    <image style="margin-top: 0; margin-bottom: 50rpx;" mode="aspectFit" src="../../../../images/teach/2.jpg" show-menu-by-longpress="{{true}}"></image>
+    <text class="T" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于图片的格式要求，课表截图应、最好如下图所示，使用电脑进行截图，然后通过微信发送至手机，在手机上进行上传识别操作（每人每天三次机会，一次识别所需时间大约20~30秒）。\n</text>
+    <image mode="aspectFit" src="../../../../images/teach/2-1.png" show-menu-by-longpress="{{true}}"></image>
+    <text class="T" decode="true">\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最低要求如下：用户上传的截图应至少将课表的四边露出。\n</text>
+    <image mode="aspectFit" src="../../../../images/teach/2-2.png" show-menu-by-longpress="{{true}}"></image>
+    <!-- <view class="adv">
+        <ad unit-id="adunit-13c170bb91858157"></ad>
+    </view> -->
+    <image mode="aspectFit" src="../../../../images/teach/2-3.jpg" show-menu-by-longpress="{{true}}"></image>
+    <text class="T" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关于课表的修改，用户通过选择相应的星期、节数，下面的信息栏即可自动显示为相应的课程。\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;之后用户再通过修改识别有误的地方，最后点击修改，即可完成修改。\n</text>
+    <text class="T" decode="true">\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以识别下面这个空白的课表来一键删除曾经的识别内容（长按保存）。\n</text>
+    <image mode="aspectFit" src="../../../../images/teach/2-4.png" show-menu-by-longpress="{{true}}"></image>
+    
+    <view class="adv">
+        <ad unit-id="adunit-c7e3dbeaef557917"></ad>
+    </view>
+</view>
+
+

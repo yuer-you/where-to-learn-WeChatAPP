@@ -1,0 +1,24 @@
+/* pages/user/teach/classroomState/classroomstate.wxss */
+.all {
+    margin: 50rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.T {
+    font-size: 34rpx;
+    line-height: 60rpx;
+}
+
+image {
+    margin-top: 50rpx;
+}
+
+.adv {
+    margin: 50rpx 0;
+}

@@ -1,0 +1,13 @@
+<!--pages/user/teach/collectAbout/collectAbout.wxml-->
+<view class="all">
+    <image style="margin-top: 0; margin-bottom: 50rpx;" mode="aspectFit" src="../../../../images/teach/3.jpg" show-menu-by-longpress="{{true}}"></image>
+    <text class="T" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如上图所示，用户可以通过“我的”页面内的“收藏教室”入口进入该功能。\n</text>
+    <image mode="aspectFit" src="../../../../images/teach/3-1.jpg" show-menu-by-longpress="{{true}}"></image>
+    <text class="T" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以“收藏教室1”为例进行讲解。\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上侧的红色方框为选择框的点击范围，后面的“x”按钮，用于清除对应选择框的内容。\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;点击上方红框后，或出现教室选择弹窗，选择完成点击确定后，即为待选成功，最后点击修改，即可保存。\n</text>
+    <image mode="aspectFit" src="../../../../images/teach/3-2.jpg" show-menu-by-longpress="{{true}}"></image>
+    <text class="T" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但再次进入该页面，上一次收藏的结果并不会显示在选择框内，而是显示在下方的红色方框内。这时需要用户进行再次选择，否则，点击修改后，会删除上次收藏的教室（等开发者有时间后一定修改这个缺陷）。</text>
+    
+    <view class="adv">
+        <ad unit-id="adunit-534bad4eef7d9db4"></ad>
+    </view>
+</view>

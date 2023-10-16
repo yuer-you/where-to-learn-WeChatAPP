@@ -1,0 +1,28 @@
+<!--pages/user/teach/teach.wxml-->
+<view class="body">
+    <view class="setGroup">
+        <!-- 教程1 -->
+        <view class="set" bind:tap="classroomState">
+            <text>1.教室状态查询功能</text>
+            <image class="right" mode="aspectFit" src="../../../images/user/goto.png"></image>
+        </view>
+        <!-- 教程2 -->
+        <view class="set" bind:tap="scheduleAbout">
+            <text>2.课程表相关功能</text>
+            <image class="right" mode="aspectFit" src="../../../images/user/goto.png"></image>
+        </view>
+        <!-- 教程3 -->
+        <view class="set" bind:tap="collectAbout">
+            <text>3.收藏教室功能</text>
+            <image class="right" mode="aspectFit" src="../../../images/user/goto.png"></image>
+        </view>
+        <!-- 教程4 -->
+        <view class="set" bind:tap="userAbout">
+            <text>4.头像和昵称功能</text>
+            <image class="right" mode="aspectFit" src="../../../images/user/goto.png"></image>
+        </view>
+        <view class="adv">
+            <ad unit-id="adunit-13c170bb91858157"></ad>
+        </view>
+    </view>
+</view>

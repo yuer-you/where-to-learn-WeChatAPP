@@ -1,0 +1,12 @@
+<!--pages/user/teach/userAbout/userAbout.wxml-->
+<view class="all">
+    <image style="margin-top: 0; margin-bottom: 50rpx;" mode="aspectFit" src="../../../../images/teach/4.jpg" show-menu-by-longpress="{{true}}"></image>
+    <text class="T" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如上图所示，用户可以通过“我的”页面内的“修改头像和昵称”入口进入该功能。\n</text>
+    <image mode="aspectFit" src="../../../../images/teach/4-1.jpg" show-menu-by-longpress="{{true}}"></image>
+    <text class="T" decode="true">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;该功能为附加功能，为以后可能的更新做铺垫。\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户点击红色方框内的区域即可更换头像与昵称。</text>
+    
+    <view class="adv">
+        <ad unit-id="adunit-ce4bd9a07da90ce5"></ad>
+    </view>
+</view>
+
