@@ -6,10 +6,15 @@
         <text class="T" decode="true">&nbsp;&nbsp;&nbsp;https://github.com/yuer-you&nbsp;&nbsp;&nbsp;</text>
         <image class="photo" src="../../../images/user/copy.png" mode="aspectFit" bind:tap="bindCopyGithub"></image>
     </view>
-        <text class="T">\n问题反馈邮箱（请附上手机型号）：\n</text>
+    <text class="T">\n问题反馈QQ群：\n</text>
+    <view class="copy">
+        <text class="T" decode="true">&nbsp;&nbsp;&nbsp;731312679&nbsp;&nbsp;&nbsp;</text>
+        <image class="photo" src="../../../images/user/copy.png" mode="aspectFit" bind:tap="bindCopyQQ"></image>
+    </view>
+    <text class="T">\n问题反馈邮箱：\n</text>
     <view class="copy">
         <text class="T" decode="true">&nbsp;&nbsp;&nbsp;970750948@qq.com&nbsp;&nbsp;&nbsp;</text>
-        <image class="photo" src="../../../images/user/copy.png" mode="aspectFit" bind:tap="bindCopyQQ"></image>
+        <image class="photo" src="../../../images/user/copy.png" mode="aspectFit" bind:tap="bindCopyQQEmail"></image>
     </view>
     
 

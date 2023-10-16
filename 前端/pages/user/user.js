@@ -64,7 +64,7 @@ Page({
                     })
                     wx.request({
                         method: 'GET',
-                        url: 'https://你的服务器网址/deleteData.py?openid=' + this.data.openid,
+                        url: 'https://smallapp.easternlake.site/wx/deleteData.py?openid=' + this.data.openid,
                         success: (res) => {
                             // console.log(res)
                             if (res.data === "success") {
@@ -102,6 +102,13 @@ Page({
     about: function (params) {
         wx.navigateTo({
             url: './about/about',
+          })
+    },
+
+    // 跳转教程页面
+    teach: function (params) {
+        wx.navigateTo({
+            url: './teach/teach',
           })
     },
 

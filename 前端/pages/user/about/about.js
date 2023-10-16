@@ -25,6 +25,13 @@ Page({
     // 复制内容
     bindCopyQQ: function (params) {
         wx.setClipboardData({
+            data: '731312679'
+        })
+    },
+
+    // 复制内容
+    bindCopyQQEmail: function (params) {
+        wx.setClipboardData({
             data: '970750948@qq.com'
         })
     },

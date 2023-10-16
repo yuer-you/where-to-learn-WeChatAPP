@@ -35,6 +35,9 @@
     justify-content: space-between;
     align-items: center;
 }
+.picker picker {
+    width: 290rpx;
+}
 .picker .photo {
     width: 35rpx;
     height: 35rpx;

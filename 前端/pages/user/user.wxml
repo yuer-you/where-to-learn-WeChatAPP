@@ -52,6 +52,12 @@
                 <text>关于小程序&问题反馈</text>
                 <image class="right" mode="aspectFit" src="../../images/user/goto.png"></image>
             </view>
+            <!-- 小程序教程 -->
+            <view class="set" bind:tap="teach">
+                <image class="left" mode="aspectFit" src="../../images/user/teach.png"></image>
+                <text>小程序功能教程</text>
+                <image class="right" mode="aspectFit" src="../../images/user/goto.png"></image>
+            </view>
         </view>
     </view>
 </view>

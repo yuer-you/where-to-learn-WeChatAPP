@@ -164,7 +164,7 @@ Page({
             title: '修改中...',
         })
         wx.request({
-            url: 'https://你的服务器网址/changeClassroom.py',
+            url: 'https://smallapp.easternlake.site/wx/changeClassroom.py',
             data: {
                 openid: this.data.openid,
                 change_classroom: change_classroom_json,
