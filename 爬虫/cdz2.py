@@ -22,7 +22,7 @@ def main(base):
         print(name)
         time0=time.time()
 
-        engine = create_engine('mysql+pymysql://你的用户名:你的密码@localhost:3306/'+name[1].split('\\')[2])
+        engine = create_engine('mysql+pymysql://root:密码@服务器IP地址:3306/'+name[1].split('\\')[2])
         # 读取本地CSV文件
         df = pd.read_csv(name[1], sep=',')
 

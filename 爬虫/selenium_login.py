@@ -1,4 +1,4 @@
-# coding:utf-8
+﻿# coding:utf-8
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -12,6 +12,7 @@ from verification_code.ImgFunction import EnlargeImg
 from verification_code.ImgFunction import ImgInOut
 
 from only_jwxt import jwxt1
+import random
 
 while True:
     runTime = 0
@@ -64,10 +65,17 @@ while True:
 
         driver.get(url)
 
-        loginname = driver.find_element(By.NAME, "loginname")
-        loginname.send_keys("你的学号")
-        password = driver.find_element(By.NAME, "password")
-        password.send_keys("你的密码")
+        choose_ID = random.randint(0, 1)
+        if (choose_ID == 0):
+            loginname = driver.find_element(By.NAME, "loginname")
+            loginname.send_keys("账号")
+            password = driver.find_element(By.NAME, "password")
+            password.send_keys("密码")
+        else:
+            loginname = driver.find_element(By.NAME, "loginname")
+            loginname.send_keys("账号")
+            password = driver.find_element(By.NAME, "password")
+            password.send_keys("密码")
 
         driver.find_element(By.CLASS_NAME, "captcha").screenshot("./c/vcCode.png")
 

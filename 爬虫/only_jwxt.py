@@ -1,4 +1,4 @@
-import requests
+﻿import requests
 from bs4 import BeautifulSoup
 import datetime
 
@@ -22,7 +22,7 @@ def jwxt1():
     now = ""
     num = 0
 
-    for zhou in range(1, 21):
+    for zhou in range(1, 20):
         day = []
         for page in range(1, 16):
             url = "https://aa.bjtu.edu.cn/classroom/timeholdresult/room_view/?zc=%d&page=%d" % (
@@ -100,13 +100,17 @@ def jwxt1():
                 if (str(z).find(str(x).split("@")[0]) != -1):
                     m = str(x).split("@")
                     for n in range(1, len(m), 7):
-                        ls = list(buildname)[y] + "&" + str(x).split(
-                            "@")[0] + "&"
-                        ls = ls + datetime.datetime.now(
-                        ).strftime('%Y') + "." + str(
-                            int(m[n].split("&")[0].split("月")[0])) + "." + str(
-                                int(m[n].split("&")[0].split("月")[1].split("日")
-                                    [0]))
+                        ls = list(buildname)[y] + "&" + str(x).split("@")[0] + "&"
+
+                        if (int(m[n].split("&")[0].split("月")[0]) == 1):
+                            ls = ls + str(int(datetime.datetime.now().strftime('%Y')) + 1) + "." + str(
+                                int(m[n].split("&")[0].split("月")[0])) + "." + str(
+                                    int(m[n].split("&")[0].split("月")[1].split("日")[0]))
+                        else:
+                            ls = ls + datetime.datetime.now().strftime('%Y') + "." + str(
+                                int(m[n].split("&")[0].split("月")[0])) + "." + str(
+                                    int(m[n].split("&")[0].split("月")[1].split("日")[0]))
+
                         for ls2 in range(0, 7):
                             ls = ls + "&" + m[n + ls2].split("&")[1]
                         ls = ls + "\n"

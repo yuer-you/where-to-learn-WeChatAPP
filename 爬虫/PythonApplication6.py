@@ -1,4 +1,9 @@
 import os
+import time
+import random
+
+delay_time = random.randint(0, 300)
+time.sleep(delay_time)
 
 start_dire1 = r"selenium_login.py"
 start_dire2 = r"cdz.py"
