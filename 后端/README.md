@@ -2,7 +2,7 @@ changeClassroom：修改收藏教室
 changeSchedule：修改课表  
 deleteData：删除全部数据  
 downLoadPhoto：获取用户上传的头像  
-gsc：获取教室状态
+gsc：获取教室状态  
 getClassroomCollect：获取收藏教室的状态  
 getClassroomRanking：获取教室排行  
 getClassroomStateAPI：获取教室状态的功能代码  
