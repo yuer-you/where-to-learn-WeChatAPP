@@ -15,4 +15,4 @@ openid：获取openid并将一系列参数传递到前端
 saveUsername：获取用户修改的昵称并保存  
 time_ocr&bool_schedule：获取剩余图片识别次数、bool_schedule改为1  
 time_ocr_to3：定时触发（需手动设置），将time_ocr设置为3（每天3次机会）  
-getMessage：从数据库获取通知内容，将其返回到前端（2023.10.16更新）
+getMessage：从数据库获取通知内容，将其返回到前端（2024.06.23最后更新）
