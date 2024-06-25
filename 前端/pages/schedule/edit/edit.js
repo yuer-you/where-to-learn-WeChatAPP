@@ -131,7 +131,7 @@ Component({
                 title: '修改中...',
             })
             wx.request({
-                url: 'https://smallapp.easternlake.site/wx/changeSchedule.py',
+                url: 'https://自己的网址/自己的储存路径/changeSchedule.py',
                 data: {
                     table: table,
                     day: whichDayIndex,
