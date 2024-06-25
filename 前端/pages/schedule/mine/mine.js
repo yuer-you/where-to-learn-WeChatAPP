@@ -57,7 +57,7 @@ Component({
                 title: '加载中...',
             })
             wx.request({
-                url: 'https://smallapp.easternlake.site/wx/getSchedule.py?table=' + this.data.table,
+                url: 'https://自己的网址/自己的储存路径/getSchedule.py?table=' + this.data.table,
                 method: 'GET',
                 success: (res) => {
                     if (res.data.schedule) {
