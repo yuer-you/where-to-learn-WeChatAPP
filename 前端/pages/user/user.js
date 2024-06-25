@@ -64,7 +64,7 @@ Page({
                     })
                     wx.request({
                         method: 'GET',
-                        url: 'https://smallapp.easternlake.site/wx/deleteData.py?openid=' + this.data.openid,
+                        url: 'https://自己的网址/自己的储存路径/deleteData.py?openid=' + this.data.openid,
                         success: (res) => {
                             // console.log(res)
                             if (res.data === "success") {
