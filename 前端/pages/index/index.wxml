@@ -127,7 +127,7 @@
 
     <!-- AD -->
     <view class='index_block'>
-        <ad unit-id=""></ad>
+        <ad unit-id="自己的广告ID"></ad>
     </view>
     <view class='index_empty'></view>
 

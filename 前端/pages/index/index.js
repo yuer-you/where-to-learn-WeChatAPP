@@ -72,7 +72,7 @@ Page({
         const buildingName_json = JSON.stringify(buildingName)
         const classroomNumber_json = JSON.stringify(classroomNumber)
         wx.request({
-            url: 'https://smallapp.easternlake.site/wx/getClassroomCollect.py',
+            url: 'https://自己的网址/自己的储存路径/getClassroomCollect.py',
             data: {
                 buildingName: buildingName_json,
                 classroomNumber: classroomNumber_json
@@ -93,7 +93,7 @@ Page({
     // 获取今日课表
     getScheduleToday: function () {
         wx.request({
-            url: 'https://smallapp.easternlake.site/wx/getScheduleToday.py?table=' + this.data.table,
+            url: 'https://自己的网址/自己的储存路径/getScheduleToday.py?table=' + this.data.table,
             method: 'GET',
             success: (res) => {
                 if (res.data.today_schedule) {
@@ -111,7 +111,7 @@ Page({
     // 获取教室排名
     getClassroomRanking: function () {
         wx.request({
-            url: 'https://smallapp.easternlake.site/wx/getClassroomRanking.py',
+            url: 'https://自己的网址/自己的储存路径/getClassroomRanking.py',
             method: 'GET',
             success: (res) => {
                 if (res.data.classroomRanking) {
@@ -196,7 +196,7 @@ Page({
     // 获取通知消息
     getMessage: function () {
         wx.request({
-            url: 'https://smallapp.easternlake.site/wx/getMessage.py',
+            url: 'https://自己的网址/自己的储存路径/getMessage.py',
             method: 'GET',
                 success: (res) => {
                     if (res.data.text) {
