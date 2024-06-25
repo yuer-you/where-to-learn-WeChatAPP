@@ -1,0 +1,3 @@
+with open的第12行修改
+上学期   ls = ls + str(int(datetime.datetime.now().strftime('%Y')) + 1) + "." + str(
+下学期   ls = ls + str(int(datetime.datetime.now().strftime('%Y'))) + "." + str(
