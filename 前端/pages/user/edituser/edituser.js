@@ -57,7 +57,7 @@ Page({
             // 用户名修改
             wx.request({
                 method: 'GET',
-                url: 'https://smallapp.easternlake.site/wx/saveUsername.py?openid=' + this.data.openid + '&username=' + username,
+                url: 'https://自己的网址/自己的储存路径/saveUsername.py?openid=' + this.data.openid + '&username=' + username,
                 success: (res) => {
                     wx.showToast({
                         title: '修改成功',
@@ -81,7 +81,7 @@ Page({
                         'openid': this.data.openid,
                         'photoname': '1'
                     },
-                    url: 'https://smallapp.easternlake.site/wx/downLoadPhoto.py',
+                    url: 'https://自己的网址/自己的储存路径/downLoadPhoto.py',
                     success: (res) => {
                         console.log('成功：',res.data)
                     },
