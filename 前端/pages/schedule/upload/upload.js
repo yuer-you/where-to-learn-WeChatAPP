@@ -71,7 +71,7 @@ Component({
                             'openid': this.data.openid,
                             'photoname': 'schedule'
                         },
-                        url: 'https://smallapp.easternlake.site/wx/downLoadPhoto.py',
+                        url: 'https://自己的网址/自己的储存路径/downLoadPhoto.py',
                         success: (res) => {
                             console.log('上传成功：',res.data)
                         },
@@ -93,14 +93,14 @@ Component({
                     title: '识别中...',
                 })
                 wx.request({
-                    url: 'https://smallapp.easternlake.site/wx/ocr.py?table=' + this.data.table,
+                    url: 'https://自己的网址/自己的储存路径/ocr.py?table=' + this.data.table,
                     method: 'GET',
                     success: (res) => {
                         // console.log(res.data)
                         if (res.data.success) {
                             // 识别次数-1
                             wx.request({
-                                url: 'https://smallapp.easternlake.site/wx/time_ocr&bool_schedule.py?openid=' + this.data.openid,
+                                url: 'https://自己的网址/自己的储存路径/time_ocr&bool_schedule.py?openid=' + this.data.openid,
                                 method: 'GET',
                                 success: (res) => {
                                     if (res.data.time_ocr_success && res.data.bool_schedule_success) {
