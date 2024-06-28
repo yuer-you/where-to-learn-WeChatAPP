@@ -56,7 +56,7 @@ App({
             success: (res) => {
                 // console.log(res.code); // 先login得到code
                 if (res.code) {
-                    const url = 'https://smallapp.easternlake.site/wx/openid.py?js_code=' + res.code; // 用来获取opendi、table
+                    const url = 'https://自己的网址/自己的储存路径/openid.py?js_code=' + res.code; // 用来获取opendi、table
                     wx.request({
                         url: url,
                         method: 'GET',
@@ -75,7 +75,7 @@ App({
                                 this.globalData.bool_classroom = res.data.bool_classroom
                                 this.globalData.time_ocr = res.data.time_ocr
                                 if (res.data.photo) {
-                                    this.globalData.userphotopath = 'https://smallapp.easternlake.site/wx/image/' + this.globalData.table + '/1.png'
+                                    this.globalData.userphotopath = 'https://自己的网址/自己的储存路径/image/' + this.globalData.table + '/1.png'
                                 } else {
                                     this.globalData.userphotopath = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
                                 }
@@ -153,7 +153,7 @@ App({
         const buildingName_json = JSON.stringify(buildingName)
         const classroomNumber_json = JSON.stringify(classroomNumber)
         wx.request({
-            url: 'https://smallapp.easternlake.site/wx/getClassroomCollect.py',
+            url: 'https://自己的网址/自己的储存路径/getClassroomCollect.py',
             data: {
                 buildingName: buildingName_json,
                 classroomNumber: classroomNumber_json
@@ -173,7 +173,7 @@ App({
     // 获取今日课表
     getScheduleToday: function () {
         wx.request({
-            url: 'https://smallapp.easternlake.site/wx/getScheduleToday.py?table=' + this.globalData.table,
+            url: 'https://自己的网址/自己的储存路径/getScheduleToday.py?table=' + this.globalData.table,
             method: 'GET',
             success: (res) => {
                 if (res.data.today_schedule) {
@@ -190,7 +190,7 @@ App({
     // 获取教室排名
     getClassroomRanking: function () {
         wx.request({
-            url: 'https://smallapp.easternlake.site/wx/getClassroomRanking.py',
+            url: 'https://自己的网址/自己的储存路径/getClassroomRanking.py',
             method: 'GET',
             success: (res) => {
                 if (res.data.classroomRanking) {
