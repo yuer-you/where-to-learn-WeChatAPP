@@ -1,5 +1,7 @@
 # 去哪学微信小程序（毕业已停止运营）
-BJTU计院的同学不要直接拿去当课设哦～有几位老师听说过这个小程序的～  
+- 提醒  
+BJTU计院的同学不要直接拿去当课设哦～有几位老师听说过这个小程序的～
+
 可以在前端文件中找到部分界面的图片  
 附赠小程序使用调研问卷（50份回答）https://www.wjx.cn/wjx/activitystat/verifyreportpassword.aspx?viewtype=1&activity=243063131&type=1  
 问卷密码123456
